@@ -1,0 +1,56 @@
+.education {
+    padding-top: 10px;
+
+    &__title {
+        font-family: $font;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 18px;
+        color: #FFFFFF;
+        background-color: #545454;
+        border-radius: 5px;
+        display: inline-block;
+        padding: 5px 30px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 100%;
+            width: 160px;
+            height: 2px;
+            background-color: #545454;
+        }
+    }
+
+    .content-wrap {
+        font-family: $roboto;
+        font-style: normal;
+        color: #343434;
+        line-height: 18px;
+        margin-bottom: 20px;
+    }
+
+    .study {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .place {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .date {
+        font-weight: normal;
+        font-size: 12px;
+        color: rgba(115, 128, 141, 1);
+        margin-bottom: 5px;
+    }
+
+}

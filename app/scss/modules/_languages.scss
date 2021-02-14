@@ -1,0 +1,64 @@
+
+.languages {
+    background: rgba(196, 196, 196, 0.35);
+    border-radius: 10px;
+    padding: 10px 0;
+    margin-bottom: 15px;
+
+    .title_languages {
+        font-family: $font;
+        font-weight: 700;
+        font-size: 18px;
+        color: #FFFFFF;
+        margin-bottom: 5px;
+        margin-left: 20px;
+    }
+
+    .item {
+        display: flex;
+        font-family: $roboto;
+        font-size: 16px;
+        line-height: 18px;
+        color: #FAFAFA;
+        margin-left: 20px;
+
+
+        .lng {
+            margin-right: 5px;
+            display: inline-block;
+            min-width: 70px;
+        }
+
+    }
+
+
+    .circles {
+        display: flex;
+        align-items: center;
+        padding-right: 125px;
+
+        .circle {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(84, 84, 84, 0.6);
+            margin-right: 5px;
+
+            &--english:nth-child(n+4) {
+                background: #CECACA;
+            }
+        
+            &--ukrainian:nth-child(5){
+                background: #CECACA;
+            }
+
+            &--polish:nth-child(5){
+                background: #CECACA;
+            }
+
+
+        }
+
+    }
+
+}

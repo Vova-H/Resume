@@ -1,0 +1,38 @@
+.knowledge {
+
+    background: rgba(196, 196, 196, 0.35);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 10px 0;
+
+    .title_knowledge {
+        font-family: $font;
+        font-weight: 700;
+        font-size: 18px;
+        color: #FFFFFF;
+        margin-bottom: 5px;
+        margin-left: 20px;
+    }
+
+    .item {
+        font-family: $roboto;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 18px;
+        color: #FAFAFA;
+        margin-left: 20px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            top: 6px;
+            left: -12px;
+
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.mySkills{
+    &__title {
+        font-family: $font;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 18px;
+        color: #FFFFFF;
+        background-color: #545454;
+        border-radius: 5px;
+        display: inline-block;
+        padding: 5px 30px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 100%;
+            width: 160px;
+            height: 2px;
+            background-color: #545454;
+        }
+    }
+padding-top: 10px;
+    &__content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+
+        .item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 40px;
+            // width: 60px;
+            margin-bottom: 20px;            
+        }
+
+      
+
+        .skillIcon{
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 5px;
+            
+            // padding: 10px;
+            // border-radius: 50%;
+            // background: #000;
+            width: 60px;
+            // height: 60px;
+        }
+    }
+
+   
+
+}

@@ -1,0 +1,48 @@
+.social {
+    background: rgba(196, 196, 196, 0.35);
+    border-radius: 10px;
+    padding: 10px 0;
+    margin-bottom: 15px;
+
+    .title_social {
+        font-family: $font;
+        font-weight: 700;
+        font-size: 18px;
+        color: #FFFFFF;
+        margin-bottom: 5px;
+        margin-left: 20px;
+    }
+
+    .link {
+        display: flex;
+        font-family: $roboto;
+        font-size: 14px;
+        line-height: 18px;
+        color: #FAFAFA;
+        margin-left: 20px;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        font-size: 16px;
+        margin-bottom: 5px;
+        
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: #fff;
+            left: 50%;
+            height: 1px;
+            width: 0px;
+            bottom: -2px;
+            transition: all .3s;
+        }
+
+        &:hover::after{
+            left: 0;
+            width: 100%;
+        }
+
+
+    }
+}

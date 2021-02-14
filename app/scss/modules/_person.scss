@@ -1,0 +1,102 @@
+.head {
+    padding-top: 10px;
+    display: flex;
+    font-family: $font;
+}
+
+.name {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30px;
+    color: #CECACA;
+    margin-bottom: 5px;
+}
+
+.surname {
+
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 43px;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+.position {
+
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: #CECACA;
+}
+
+.photo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-right: 22px;
+    margin-bottom: 20px;
+}
+
+
+.items_contact {
+
+    .item {
+        padding: 10px 17px;
+        background: rgba(196, 196, 196, 0.35);
+        border-radius: 10px;
+        margin-bottom: 5px;
+
+        &:last-child {
+            margin-bottom: 15px;
+        }
+    }
+
+    .link {
+        text-decoration: none;
+        font-family: $roboto;
+        font-size: 16px;
+        line-height: 18px;
+        color: #FFFFFF;
+        position: relative;
+
+        &:hover {
+            color: wheat;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            background: #fff;
+            width: 0;
+            height: 1px;
+            left: 0%;
+            bottom: -2px;
+            transition: all .3s;
+        }
+
+        &:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+
+
+        span {
+            margin-right: 30px;
+        }
+
+        .icon-mail {
+            margin-right: 27px;
+        }
+
+        .icon-marker {
+            margin-right: 35px;
+        }
+
+        .icon-world {
+            margin-right: 31px;
+        }
+    }
+
+
+}
