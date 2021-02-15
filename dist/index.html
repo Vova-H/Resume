@@ -10,12 +10,7 @@
 
 	<link rel="icon" href="images/favicon.png">
 
-	<!--build:css css/styles.min.css-->
-	<link rel="stylesheet" href="css/bundle.min.css">
 	<link rel="stylesheet" href="css/styles.min.css">
-	<link href="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css">
-
-	<!--endbuild-->
 
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -31,7 +26,7 @@
 
 				<div class="head">
 					<div class="image">
-						<img class="photo" src="images/vova.jpg" alt="photo">
+						<img class="photo" src="images/vova.jpg" alt="photo" data-aos="fade-up">
 					</div>
 					<div class="persona">
 						<div class="name">Volodymyr</div>
@@ -41,34 +36,28 @@
 				</div>
 
 				<ul class="items_contact">
-					<li class="item" data-aos="fade-right" data-aos-delay="100"> <a class="link"
-							href="mailto:vhavrikov@gmail.com"><span class="icon-mail icon"></span>
-							vhavrikov@gmail.com</a></li>
-					<li class="item" data-aos="fade-right" data-aos-delay="200"> <a class="link"
-							href="tel:+380955558262"> <span class="icon-tel icon"></span>
+					<li class="item"> <a class="link" href="mailto:vhavrikov@gmail.com"><span
+								class="icon-mail icon"></span> vhavrikov@gmail.com</a></li>
+					<li class="item"> <a class="link" href="tel:+380955558262"> <span class="icon-tel icon"></span>
 							+380955558262 </a></li>
-					<li class="item" data-aos="fade-right" data-aos-delay="300"> <a class="link"
-							href="https://www.facebook.com/Vova19777/"><span class="icon-world icon"></span>
-							Facebook</a></li>
-					<li class="item" data-aos="fade-right" data-aos-delay="400"> <a class="link" href="#"> <span
-								class="icon-marker icon"></span> Poltava</a></li>
+					<li class="item"> <a class="link" href="https://www.facebook.com/Vova19777/"><span
+								class="icon-world icon"></span> Facebook</a></li>
+					<li class="item"> <a class="link" href="#"> <span class="icon-marker icon"></span> Poltava</a></li>
 				</ul>
 
-				<div class="knowledge" data-aos="fade-left" data-aos-duration="1000">
+				<div class="knowledge">
 					<p class="title_knowledge">Industry Knowledge</p>
 					<ul class="items_knowledge">
-						<li class="item">Mobile Layout</li>
-						<li class="item">Browser Developer Tools</li>
+						<li class="item">User Interface</li>
 						<li class="item">User Experience</li>
-						<li class="item">Web Animations</li>
-						<li class="item">Cross-browser Layout</li>
-						<li class="item">Version Control/GIT</li>
-						<li class="item">Responsive Design</li>
-
+						<li class="item">Product Design</li>
+						<li class="item">Interaction Design</li>
+						<li class="item">Design Research</li>
+						<li class="item">Web Design</li>
 					</ul>
 				</div>
 
-				<div class="languages" data-aos="fade-right" data-aos-anchor-placement="top" data-aos-duration="1000">
+				<div class="languages">
 					<p class="title_languages">Languages</p>
 					<ul class="items_languages">
 						<li class="item">
@@ -116,7 +105,7 @@
 					</ul>
 				</div>
 
-				<div class="social" data-aos="fade-left" data-aos-anchor-placement="top" data-aos-duration="1000">
+				<div class="social">
 					<p class="title_social">Social</p>
 					<ul class="items_social">
 						<li class="item"><a class="link" href="https://github.com/Vova-H"> GitHub </a></li>
@@ -125,35 +114,28 @@
 					</ul>
 				</div>
 
-				<div data-aos="fade-up" class="hobbies">
+				<div data-aos="fade-up"  class="hobbies" >
 					<p class="title_hobbies">Hobbies</p>
 					<div class="container-icon">
-						<div class="item" data-aos="fade-right" data-aos-delay="100"> <span
-								class="icon icon-volleyball"></span>
+						<div class="item"> <span class="icon icon-volleyball"></span>
 							<p class="title">Volleyball</p>
 						</div>
-						<div class="item" data-aos="fade-right" data-aos-delay="200"> <span
-								class="icon icon-music"></span>
+						<div class="item"> <span class="icon icon-music"></span>
 							<p class="title"> Music</p>
 						</div>
-						<div class="item" data-aos="fade-right" data-aos-delay="300"> <span
-								class="icon icon-pacman"></span>
+						<div class="item"> <span class="icon icon-pacman"></span>
 							<p class="title"> Games </p>
 						</div>
-						<div class="item" data-aos="fade-right" data-aos-delay="400"> <span
-								class="icon icon-table-tennis"></span>
+						<div class="item"> <span class="icon icon-table-tennis"></span>
 							<p class="title"> Tennis </p>
 						</div>
-						<div class="item" data-aos="fade-right" data-aos-delay="500"> <span
-								class="icon icon-bike"></span>
+						<div class="item"> <span class="icon icon-bike"></span>
 							<p class="title"> Bicycle </p>
 						</div>
-						<div class="item" data-aos="fade-right" data-aos-delay="600"> <span
-								class="icon icon-laptop"></span>
+						<div class="item"> <span class="icon icon-laptop"></span>
 							<p class="title"> Learning</p>
 						</div>
-						<div class="item" data-aos="fade-right" data-aos-delay="700"> <span
-								class="icon icon-film"></span>
+						<div class="item"> <span class="icon icon-film"></span>
 							<p class="title"> Films</p>
 						</div>
 					</div>
@@ -179,13 +161,9 @@
 					</div>
 					<div class="panel ">
 						<p class="about__text">
-							&nbsp;&nbsp;&nbsp;&nbsp; I'm a young, 23 year old front-end developer. I am fond of website layout, I never stand
-							still, I always try to keep up with the trend with new technologies and development. For me,
-							the job of a programmer has always been interesting and educational. You are constantly
-							gaining new knowledge that motivates you to study further. <br> &nbsp;&nbsp;&nbsp;&nbsp; But in addition to working at the
-							computer, I also like outdoor activities, travel, sports and having fun with friends. I am
-							always open to meeting new people, communicative, purposeful, responsible, I go to
-							professional development.
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nam iusto dicta aliquam,
+							aperiam hic praesentium unde quod doloremque doloribus commodi dolorem accusantium. Error
+							totam fuga molestiae libero repellat exercitationem.
 						</p>
 					</div>
 				</div>
@@ -265,16 +243,6 @@
 										class="path8"></span><span class="path9"></span></span>
 								<div class="call">Photoshop</div>
 							</div>
-
-							<div class="item"><span class="skillIcon icon-sass"></span>
-								<div class="call">SCSS</div>
-							</div>
-							<div class="item"><span class="skillIcon icon-gulp"></span>
-								<div class="call">Gulp</div>
-							</div>
-							<div class="item"><span class="icon-bootstrap skillIcon"></span>
-								<div class="call">Bootstrap</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -293,11 +261,7 @@
 
 
 
-	<!--build:js js/main.min.js -->
-	<script src="js/bundle.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>
-	<!--endbuild-->
+	<script src="js/main.min.js"></script>
 </body>
 
 </html>

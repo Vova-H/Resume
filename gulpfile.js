@@ -1,30 +1,32 @@
 const SOURCES = {
 	css: [
-		'./node_modules/bootstrap/dist/css/bootstrap.min.css'
+		'./node_modules/bootstrap/dist/css/bootstrap.min.css',
+		'./node_modules/aos/dist/aos.css', //aos css
 	],
 	js: [
 		'./node_modules/jquery/dist/jquery.min.js',
 		'./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+		'./node_modules/aos/dist/aos.js', //aos js
 	]
 };
 
 // Libraries
-const gulp 			= require('gulp');
-const sass 			= require('gulp-sass');
-const browsersync 	= require("browser-sync").create();
-const plumber 		= require("gulp-plumber");
-const rename 		= require("gulp-rename");
-const postcss 		= require("gulp-postcss");
-const autoprefixer 	= require("autoprefixer");
-const cssnano 		= require("cssnano");
-const imagemin 		= require("gulp-imagemin");
-const del 			= require("del");
-const useref 		= require('gulp-useref');
-const uglify 		= require('gulp-uglify');
-const gulpIf 		= require('gulp-if');
-const wait 			= require('gulp-wait');
-const notify 		= require('gulp-notify');
-const concat		= require('gulp-concat');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const browsersync = require("browser-sync").create();
+const plumber = require("gulp-plumber");
+const rename = require("gulp-rename");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
+const imagemin = require("gulp-imagemin");
+const del = require("del");
+const useref = require('gulp-useref');
+const uglify = require('gulp-uglify');
+const gulpIf = require('gulp-if');
+const wait = require('gulp-wait');
+const notify = require('gulp-notify');
+const concat = require('gulp-concat');
 
 // Paths
 const paths = {
@@ -54,112 +56,130 @@ const paths = {
 // Modules
 function modulesCSS() {
 	return gulp.src(SOURCES.css)
-			   .pipe(wait(10))
-			   .pipe(plumbError())
-			   .pipe(concat("bundle.min.css"))
-			   .pipe(gulp.dest(paths.css.dest))
-			   .pipe(notify({message: "CSS Libraries Compiled Successfully!"}));
+		.pipe(wait(10))
+		.pipe(plumbError())
+		.pipe(concat("bundle.min.css"))
+		.pipe(gulp.dest(paths.css.dest))
+		.pipe(notify({
+			message: "CSS Libraries Compiled Successfully!"
+		}));
 }
 
 function modulesJS() {
 	return gulp.src(SOURCES.js)
-			   .pipe(wait(10))
-			   .pipe(plumbError())
-			   .pipe(concat("bundle.min.js"))
-			   .pipe(uglify())
-			   .pipe(gulp.dest(paths.js.dest))
-			   .pipe(notify({message: "JS Libraries Compiled Successfully!"}));
+		.pipe(wait(10))
+		.pipe(plumbError())
+		.pipe(concat("bundle.min.js"))
+		.pipe(uglify())
+		.pipe(gulp.dest(paths.js.dest))
+		.pipe(notify({
+			message: "JS Libraries Compiled Successfully!"
+		}));
 }
 
 // BrowserSync
 function browserSync(done) {
-  browsersync.init({
-    server: {
-      baseDir: "./app/"
-    },
-    port: 9000
-  });
-  done();
+	browsersync.init({
+		server: {
+			baseDir: "./app/"
+		},
+		port: 9000
+	});
+	done();
 }
 
 // BrowserSync Reload
 function browserSyncReload(done) {
-  browsersync.reload();
-  done();
+	browsersync.reload();
+	done();
 }
 
 // Error Handling
 function plumbError() {
-  return plumber({
-    errorHandler: function(err) {
-      notify.onError({
-        templateOptions: {
-          date: new Date()
-        },
-        title: "Gulp error in " + err.plugin,
-        message: err.formatted
-      })(err);
-      this.emit('end');
-    }
-  })
+	return plumber({
+		errorHandler: function (err) {
+			notify.onError({
+				templateOptions: {
+					date: new Date()
+				},
+				title: "Gulp error in " + err.plugin,
+				message: err.formatted
+			})(err);
+			this.emit('end');
+		}
+	})
 }
 
 // CSS task
 function styles() {
 	return gulp.src(paths.css.src)
-	           .pipe(wait(500))
-       		   .pipe(plumbError())
-	           .pipe(sass())
-	           .pipe(rename({ suffix: ".min" }))
-	           .pipe(postcss([autoprefixer('last 2 versions'), cssnano()]))
-	           .pipe(gulp.dest(paths.css.dest))
-			   .pipe(browsersync.stream())
-			   .pipe(notify({message: "SCSS Compiled Successfully!"}));
+		.pipe(wait(500))
+		.pipe(plumbError())
+		.pipe(sass())
+		.pipe(rename({
+			suffix: ".min"
+		}))
+		.pipe(postcss([autoprefixer('last 2 versions'), cssnano()]))
+		.pipe(gulp.dest(paths.css.dest))
+		.pipe(browsersync.stream())
+		.pipe(notify({
+			message: "SCSS Compiled Successfully!"
+		}));
 }
 
 // Optimize Images
 function images() {
 	return gulp.src(paths.images.src)
-        .pipe(
-            imagemin([
-                imagemin.gifsicle({interlaced: true}),
-				imagemin.mozjpeg({quality: 75, progressive: true}),
-				imagemin.optipng({optimizationLevel: 5}),
+		.pipe(
+			imagemin([
+				imagemin.gifsicle({
+					interlaced: true
+				}),
+				imagemin.mozjpeg({
+					quality: 75,
+					progressive: true
+				}),
+				imagemin.optipng({
+					optimizationLevel: 5
+				}),
 				imagemin.svgo({
-					plugins: [
-						{removeViewBox: true},
-						{cleanupIDs: false}
+					plugins: [{
+							removeViewBox: true
+						},
+						{
+							cleanupIDs: false
+						}
 					]
 				})
-            ])
-        )
+			])
+		)
 		.pipe(gulp.dest(paths.images.dest));
 }
 
 // Clean dist
 function clean() {
-  return del([paths.html.dest]);
+	return del([paths.html.dest]);
 }
 
 // Move items to dist
 function fonts() {
-  return gulp.src(paths.fonts.src)
-  			 .pipe(gulp.dest(paths.fonts.dest));
+	return gulp.src(paths.fonts.src)
+		.pipe(gulp.dest(paths.fonts.dest));
 };
 
 function distFiles() {
 	return gulp.src(paths.html.src)
-			   .pipe(useref())
-			   .pipe(gulpIf('*.js', uglify()))
-			   .pipe(gulp.src('*.css'))
-			   .pipe(gulp.dest(paths.html.dest));
+		.pipe(useref())
+		.pipe(gulpIf('*.js', uglify()))
+		.pipe(gulp.src('*.css'))
+		.pipe(gulp.dest(paths.html.dest));
 }
 
 // Watch files
 function watchFiles() {
-  	gulp.watch(paths.css.src, styles);
-  	gulp.watch(paths.html.src, browserSyncReload);
-  	gulp.watch(paths.js.src, browserSyncReload);
+	gulp.watch(paths.css.src, styles);
+	gulp.watch(paths.html.src, browserSyncReload);
+	gulp.watch(paths.js.src, browserSyncReload);
 	gulp.watch(paths.images.src, images);
 }
 

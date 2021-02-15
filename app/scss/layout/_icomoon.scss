@@ -134,13 +134,25 @@
     content: "\e91c";
     color: #fff;
   }
+  .icon-bootstrap:before {
+    content: "\e925";
+    color: #563d7c;
+  }
   .icon-csharp:before {
     content: "\e920";
     color: #239120;
   }
+  .icon-gulp:before {
+    content: "\e923";
+    color: #da4648;
+  }
   .icon-php:before {
     content: "\e921";
     color: #777bb4;
+  }
+  .icon-sass:before {
+    content: "\e924";
+    color: #c69;
   }
   .icon-wordpress:before {
     content: "\e922";

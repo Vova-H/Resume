@@ -2,9 +2,9 @@
 .container-fluid {
     background: rgb(3, 56, 244);
     background: linear-gradient(180deg, rgba(3, 56, 244, 0.71) 0%, rgba(244, 37, 206, 0.79) 100%);
+    // background: linear-gradient(180deg, rgba(3, 56, 244, 1) 0%, rgba(244, 37, 206, 1) 100%);
     max-width: 950px;
-    margin: 0 auto;
-    margin-top: 50px;
+    margin: 100px auto;
 }
 
 
@@ -24,6 +24,8 @@
     background: #FFFFFF;
     border-radius: 10px;
     padding-top: 10px;
+    user-select: none;
+    
 }
 
 
