@@ -3,7 +3,8 @@
 (function ($) {
 	$(document).ready(function () {
 		// Code
-		AOS.init();
+		
+
 	});
 })(jQuery);
 
@@ -21,9 +22,7 @@ for (i = 0; i < acc.length; i++) {
 		} else {
 			panel.style.opacity = 0;
 			panel.style.maxHeight = 0;
-
 			// panel.style.maxHeight = panel.scrollHeight + "px";
-
 		}
 	});
 }
