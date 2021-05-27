@@ -1,14 +1,5 @@
 'use strict';
 
-(function ($) {
-	$(document).ready(function () {
-		// Code
-		
-
-	});
-})(jQuery);
-
-
 
 let acc = document.getElementsByClassName("myAccordion");
 let i;
